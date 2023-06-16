@@ -1,11 +1,16 @@
+import Navbar from "./components/Navbar"
+import { MealsProvider } from "./context/Meals_context";
 
 function App() {
 
   return (
-    <div>
-      <p>Hello</p>
-    </div>
-  )
+
+    <MealsProvider>
+      <Navbar />
+ 
+    </MealsProvider>
+  
+  );
 }
 
 export default App
