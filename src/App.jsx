@@ -4,6 +4,7 @@ import HowItWorks from "./components/HowItWorks"
 import { MealsProvider } from "./context/Meals_context";
 import Featured from "./components/Featured"
 import Footer from "./components/Footer"
+import Testimonials from "./components/Testimonials";
 
 function App() {
 
@@ -14,7 +15,9 @@ function App() {
       <Hero/>
       <Featured/>
       <HowItWorks/>
+      <Testimonials/>
       <Footer/>
+      
  
     </MealsProvider>
   
