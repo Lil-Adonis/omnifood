@@ -12,17 +12,17 @@ const Footer = () => {
     <Wrapper>
       <div className="container grid grid--footer">
         <div className="logo-col">
-          <a to="/" className="footer-logo">
+          <Link to="/" className="footer-logo">
             <img className="logo" src={logo} alt="Omnifood logo" />
-          </a>
+          </Link>
 
           <ul className="social-links">
             {social_links.map((item, index) => {
               return (
                 <li key={index}>
-                  <a className="footer-link" to="/">
+                  <Link className="footer-link" to="/">
                     <span className="social-icon">{item}</span>
-                  </a>
+                  </Link>
                 </li>
               );
             })}
@@ -55,9 +55,9 @@ const Footer = () => {
             {account_links.map((link, index) => {
               return (
                 <li key={index}>
-                  <a className="footer-link" to="/">
+                  <Link className="footer-link" to="/">
                     {link}
-                  </a>
+                  </Link>
                 </li>
               );
             })}
@@ -69,9 +69,9 @@ const Footer = () => {
             {company_links.map((link, index) => {
               return (
                 <li key={index}>
-                  <a className="footer-link" to="/">
+                  <Link className="footer-link" to="/">
                     {link}
-                  </a>
+                  </Link>
                 </li>
               );
             })}
@@ -83,9 +83,9 @@ const Footer = () => {
             {resources_links.map((link, index) => {
               return (
                 <li key={index}>
-                  <a className="footer-link" to="/">
+                  <Link className="footer-link" to="/">
                     {link}
-                  </a>
+                  </Link>
                 </li>
               );
             })}
