@@ -1,42 +1,25 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
-import {
-  Home,
-  Error,
-  Meals,
-  AuthWrapper,
-  Pricing,
-  CtaPage,
-} from "./pages";
+import { Home, Error, Meals, AuthWrapper, Pricing, CtaPage } from "./pages";
 
 const App = () => {
   return (
-    <AuthWrapper>
+   
       <Router>
         <Navbar />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route exact path="/meals">
-            <Meals />
-          </Route>
-          <Route exact path="/pricing">
-            <Pricing />
-          </Route>
-          <Route exact path="/cta">
-            <CtaPage />
-          </Route>
-          <Route path="*">
-            <Error />
-          </Route>
-        </Switch>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/meals" element={<Meals />} />
+          <Route path="/pricing" element={<Pricing />} />
+          <Route path="/cta" element={<CtaPage />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
         <Footer />
       </Router>
-    </AuthWrapper>
+  
   );
 };
 
