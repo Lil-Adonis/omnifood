@@ -1,11 +1,5 @@
 import React from "react";
-import {
-  Hero,
-  Featured,
-  HowItWorks,
-  Testimonials,
-  FeaturedMeals,
-} from "../components";
+import Hero from "../components/Hero";
 
 const HomePage = () => {
   return (
