@@ -1,27 +1,42 @@
-import Navbar from "./components/Navbar"
-import Hero from "./components/Hero"
-import HowItWorks from "./components/HowItWorks"
-import { MealsProvider } from "./context/Meals_context";
-import Featured from "./components/Featured"
-import Footer from "./components/Footer"
-import Testimonials from "./components/Testimonials";
+import React from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-function App() {
+import { Navbar, Footer } from "./components";
+import {
+  Home,
+  Error,
+  Meals,
+  AuthWrapper,
+  Pricing,
+  CtaPage,
+} from "./pages";
 
+const App = () => {
   return (
-
-    <MealsProvider>
-      <Navbar />
-      <Hero/>
-      <Featured/>
-      <HowItWorks/>
-      <Testimonials/>
-      <Footer/>
-      
- 
-    </MealsProvider>
-  
+    <AuthWrapper>
+      <Router>
+        <Navbar />
+        <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
+          <Route exact path="/meals">
+            <Meals />
+          </Route>
+          <Route exact path="/pricing">
+            <Pricing />
+          </Route>
+          <Route exact path="/cta">
+            <CtaPage />
+          </Route>
+          <Route path="*">
+            <Error />
+          </Route>
+        </Switch>
+        <Footer />
+      </Router>
+    </AuthWrapper>
   );
-}
+};
 
-export default App
+export default App;
