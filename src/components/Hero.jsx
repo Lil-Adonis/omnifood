@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
-    <Wrapper className="hero-section">
+    <Wrapper className="section-hero">
       <div className="hero">
         <div className="hero-text-box">
           <h1 className="heading-primary">
@@ -17,12 +17,12 @@ const Hero = () => {
             healthy again. Tailored to your personal tastes and nutritional
             needs.
           </p>
-          <a to="/pricing" className="btn btn-full margin-right-sm">
+          <Link to="/pricing" className="btn btn--full margin-right-sm">
             Start eating well
-          </a>
-          <a to="/cta" className="btn btn-outline">
+          </Link>
+          <Link to="/cta" className="btn btn--outline">
             Sign up
-          </a>
+          </Link>
 
           <CustomersImages />
         </div>
