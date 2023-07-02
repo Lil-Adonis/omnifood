@@ -1,33 +1,34 @@
 import React from "react";
 import styled from "styled-components";
-
+import { Link } from "react-router-dom";
 import { links } from "../utils/constants";
 import { IoMenuOutline } from "react-icons/io5";
 import { IoCloseOutline } from "react-icons/io5";
 import { useMealsContext } from "../context/Meals_context";
 
-
+import Login from "./Login";
 import logo from "../assets/img/omnifood-logo.png";
 
 const Navbar = () => {
   const { showSidebar, closeSidebar, sidebar_open } = useMealsContext();
   return (
     <Wrapper>
-      
+      <Link to="/">
         <img className="logo" src={logo} alt="omnifood logo" />
-      
+      </Link>
       <nav className={sidebar_open ? "main-nav nav-open" : "main-nav"}>
         <ul className="main-nav-list">
           {links.map((link) => {
             const { id, text, url } = link;
             return (
               <li onClick={closeSidebar} key={id}>
-                <h3 className="main-nav-link"  >
+                <Link className="main-nav-link" to={url}>
                   {text}
-                </h3>
+                </Link>
               </li>
             );
           })}
+          <Login />
         </ul>
       </nav>
       {sidebar_open ? (
